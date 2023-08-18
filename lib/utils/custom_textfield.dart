@@ -92,6 +92,8 @@ class _OtpFieldState extends State<OtpField> {
     return Container(
         width: 50,
         child: TextFormField(
+            autofocus: false,
+            keyboardType: TextInputType.phone,
             controller: widget.controller,
             textAlign: TextAlign.center,
             style: TextStyle(

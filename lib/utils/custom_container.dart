@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 class CustomContainer extends StatelessWidget {
   final text;
+
   const CustomContainer({super.key, this.text});
 
   @override

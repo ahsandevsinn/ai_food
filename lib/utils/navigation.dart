@@ -6,6 +6,8 @@ pushScreen(BuildContext context, Widget screen) {
       context, CupertinoPageRoute(builder: (context) => screen));
 }
 
-pop(BuildContext context, Widget screen) {
+pop(
+  BuildContext context,
+) {
   return Navigator.pop(context);
 }
