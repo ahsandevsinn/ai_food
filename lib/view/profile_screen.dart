@@ -14,6 +14,9 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<ProfileScreen> {
+  List selectedAllergies = [];
+  List selectedDietaryRestrictions = [];
+
   List allergies = [
     "Dairy",
     "Peanut",
@@ -44,9 +47,8 @@ class _MyWidgetState extends State<ProfileScreen> {
   ];
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
+    // double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-
     return SafeArea(
         child: Scaffold(
       body: SingleChildScrollView(
@@ -56,8 +58,8 @@ class _MyWidgetState extends State<ProfileScreen> {
             Column(
               children: [
                 sizedBox(20, 0),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Column(
                     children: [
                       CustomTextField(
@@ -71,8 +73,9 @@ class _MyWidgetState extends State<ProfileScreen> {
                 ),
                 sizedBox(10, width),
                 Padding(
-                  padding: const EdgeInsets.only(left: 10.0, right: 10),
+                  padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Align(
                         alignment: Alignment.topLeft,
@@ -98,6 +101,7 @@ class _MyWidgetState extends State<ProfileScreen> {
                 Padding(
                   padding: const EdgeInsets.only(left: 10.0, right: 10),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Align(
                         alignment: Alignment.topLeft,
@@ -113,7 +117,7 @@ class _MyWidgetState extends State<ProfileScreen> {
                         spacing: 10,
                         runSpacing: 10,
                         children: dietaryRestrictions.map((restriction) {
-                          return CustomContainer(text: restriction);
+                          return CustomContainer(text: restriction,);
                         }).toList(),
                       )
                     ],
@@ -122,7 +126,7 @@ class _MyWidgetState extends State<ProfileScreen> {
               ],
             ),
             sizedBox(20, 0),
-            CustomButton(
+            const CustomButton(
               text: "Save",
             ),
             sizedBox(20, 0),
